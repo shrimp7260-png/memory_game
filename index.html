@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>注文メモリー</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section id="startScreen" class="screen start-screen">
+        <div class="logo-mark" aria-hidden="true">🧠</div>
+        <p class="kicker">消える注文を覚えよう</p>
+        <h1>注文メモリー</h1>
+        <div class="mode-actions">
+          <button class="primary-button" type="button" data-start-mode="time">タイムアタック</button>
+          <button class="secondary-button" type="button" data-start-mode="endless">エンドレス</button>
+        </div>
+      </section>
+
+      <section id="gameScreen" class="screen game-screen is-hidden">
+        <header class="status-bar">
+          <div><span>スコア</span><strong id="scoreText">0</strong></div>
+          <div><span>コンボ</span><strong id="comboText">0</strong></div>
+          <div><span>ミス</span><strong id="missText">0</strong></div>
+          <div><span id="timerLabel">時間</span><strong id="timeText">60</strong></div>
+        </header>
+        <p id="modeText" class="mode-text">タイムアタック 60秒</p>
+
+        <section class="memory-card">
+          <p id="phaseText" class="phase-text">注文を覚えてください</p>
+          <div id="orderItems" class="order-items"></div>
+          <p id="feedbackText" class="feedback" aria-live="assertive"></p>
+        </section>
+
+        <section class="choice-grid" aria-label="注文を選ぶ">
+          <button type="button" data-food="バーガー">🍔<span>バーガー</span></button>
+          <button type="button" data-food="ポテト">🍟<span>ポテト</span></button>
+          <button type="button" data-food="ピザ">🍕<span>ピザ</span></button>
+          <button type="button" data-food="寿司">🍣<span>寿司</span></button>
+          <button type="button" data-food="ケーキ">🍰<span>ケーキ</span></button>
+          <button type="button" data-food="コーヒー">☕<span>コーヒー</span></button>
+        </section>
+      </section>
+
+      <section id="resultScreen" class="screen result-screen is-hidden">
+        <p id="resultModeText" class="kicker">タイムアタック結果</p>
+        <h2 id="resultTitle">記憶終了</h2>
+        <div class="result-list">
+          <div><span id="resultScoreLabel">スコア</span><strong id="resultScore">0</strong></div>
+          <div><span>最大コンボ</span><strong id="resultMaxCombo">0</strong></div>
+          <div><span>ミス数</span><strong id="resultMiss">0</strong></div>
+        </div>
+        <div class="mode-actions">
+          <button id="retryButton" class="primary-button" type="button">もう一度</button>
+          <button id="backToStartButton" class="secondary-button" type="button">モード選択へ戻る</button>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
