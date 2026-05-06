@@ -1,15 +1,18 @@
 "use strict";
 
+const scriptUrl = document.currentScript ? document.currentScript.src : window.location.href;
+const assetBaseUrl = new URL("assets/", scriptUrl).href;
+
 const assetMap = {
-  "ごはん": "assets/rice.svg",
-  "からあげ": "assets/karaage.svg",
-  "卵焼き": "assets/tamagoyaki.svg",
-  "ブロッコリー": "assets/broccoli.svg",
-  "鮭": "assets/salmon.svg",
-  "ハンバーグ": "assets/hamburg.svg",
-  "ポテト": "assets/potato.svg",
-  "トマト": "assets/tomato.svg",
-  "エビフライ": "assets/ebifry.svg"
+  "ごはん": `${assetBaseUrl}rice.svg`,
+  "からあげ": `${assetBaseUrl}karaage.svg`,
+  "卵焼き": `${assetBaseUrl}tamagoyaki.svg`,
+  "ブロッコリー": `${assetBaseUrl}broccoli.svg`,
+  "鮭": `${assetBaseUrl}salmon.svg`,
+  "ハンバーグ": `${assetBaseUrl}hamburg.svg`,
+  "ポテト": `${assetBaseUrl}potato.svg`,
+  "トマト": `${assetBaseUrl}tomato.svg`,
+  "エビフライ": `${assetBaseUrl}ebifry.svg`
 };
 
 const difficultySettings = {
