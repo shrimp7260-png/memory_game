@@ -15,35 +15,35 @@ const iconMap = {
 const difficultySettings = {
   easy: {
     label: "かんたん",
-    menu: ["バーガー", "ポテト", "ケーキ"],
-    showTime: 5000,
-    timeLimit: 90,
+    menu: ["バーガー", "ポテト", "ケーキ", "コーヒー"],
+    showTime: 3200,
+    timeLimit: 70,
     minItems: 2,
-    maxItems: 2,
+    maxItems: 3,
     scoreMultiplier: 1,
-    comboBonusEvery: 5,
-    chipSize: "large"
+    comboBonusEvery: 4,
+    chipSize: "normal"
   },
   normal: {
     label: "ふつう",
-    menu: ["バーガー", "ポテト", "ピザ", "コーヒー"],
-    showTime: 3000,
-    timeLimit: 60,
-    minItems: 2,
-    maxItems: 3,
+    menu: ["バーガー", "ポテト", "ピザ", "寿司", "ケーキ", "コーヒー"],
+    showTime: 2100,
+    timeLimit: 55,
+    minItems: 3,
+    maxItems: 4,
     scoreMultiplier: 2,
-    comboBonusEvery: 4,
+    comboBonusEvery: 3,
     chipSize: "normal"
   },
   hard: {
     label: "むずかしい",
     menu: ["バーガー", "サンド", "ホットドッグ", "ポテト", "ピザ", "寿司", "ケーキ", "ドーナツ", "コーヒー"],
-    showTime: 1700,
-    timeLimit: 45,
-    minItems: 3,
-    maxItems: 5,
-    scoreMultiplier: 3,
-    comboBonusEvery: 3,
+    showTime: 1250,
+    timeLimit: 40,
+    minItems: 4,
+    maxItems: 6,
+    scoreMultiplier: 4,
+    comboBonusEvery: 2,
     chipSize: "small"
   }
 };
@@ -183,20 +183,20 @@ function startRound() {
 }
 
 function getItemCount(settings) {
-  if (game.difficulty === "easy") {
-    return settings.minItems;
-  }
-
-  const progressBonus = game.difficulty === "hard" ? Math.floor(game.combo / 4) : Math.floor(game.combo / 6);
+  const progressBonus = game.difficulty === "hard" ? Math.floor(game.combo / 3) : Math.floor(game.combo / 5);
   return Math.min(settings.maxItems, settings.minItems + progressBonus);
 }
 
 function getShowTime(settings) {
-  if (game.difficulty !== "hard") {
-    return settings.showTime;
+  if (game.difficulty === "easy") {
+    return Math.max(2400, settings.showTime - game.combo * 55);
   }
 
-  return Math.max(1000, settings.showTime - game.combo * 45);
+  if (game.difficulty === "normal") {
+    return Math.max(1450, settings.showTime - game.combo * 65);
+  }
+
+  return Math.max(700, settings.showTime - game.combo * 70);
 }
 
 function makeOrder(count) {

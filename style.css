@@ -190,7 +190,7 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
 .order-items.size-small {
   grid-template-columns: repeat(3, 62px);
   min-height: 134px;
-  gap: 8px;
+  gap: 7px;
 }
 
 .order-chip {
@@ -213,7 +213,7 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
 .order-items.size-small .order-chip {
   width: 62px;
   height: 62px;
-  font-size: 2.15rem;
+  font-size: 2rem;
 }
 
 .order-chip.hidden-order {
@@ -317,5 +317,6 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
   .order-chip { width: 58px; height: 58px; font-size: 2.1rem; }
   .order-items.size-large .order-chip { width: 68px; height: 68px; font-size: 2.45rem; }
   .order-items.size-small .order-chip { width: 52px; height: 52px; font-size: 1.8rem; }
-  .choice-grid button { min-height: 62px; font-size: 1.5rem; }
+  .choice-grid button { min-height: 56px; font-size: 1.36rem; }
+  .choice-grid span { font-size: 0.58rem; }
 }
