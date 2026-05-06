@@ -1,48 +1,48 @@
 "use strict";
 
-const iconMap = {
-  "バーガー": "🍔",
-  "サンド": "🥪",
-  "ホットドッグ": "🌭",
-  "ポテト": "🍟",
-  "ピザ": "🍕",
-  "寿司": "🍣",
-  "ケーキ": "🍰",
-  "ドーナツ": "🍩",
-  "コーヒー": "☕"
+const assetMap = {
+  "ごはん": "../bento-game/assets/rice.svg",
+  "からあげ": "../bento-game/assets/karaage.svg",
+  "卵焼き": "../bento-game/assets/tamagoyaki.svg",
+  "ブロッコリー": "../bento-game/assets/broccoli.svg",
+  "鮭": "../bento-game/assets/salmon.svg",
+  "ハンバーグ": "../bento-game/assets/hamburg.svg",
+  "ポテト": "../bento-game/assets/potato.svg",
+  "トマト": "../bento-game/assets/tomato.svg",
+  "エビフライ": "../bento-game/assets/ebifry.svg"
 };
 
 const difficultySettings = {
   easy: {
     label: "かんたん",
-    menu: ["バーガー", "ポテト", "ケーキ", "コーヒー"],
-    showTime: 3200,
-    timeLimit: 70,
-    minItems: 2,
-    maxItems: 3,
+    menu: ["ごはん", "からあげ", "卵焼き", "トマト", "ポテト"],
+    showTime: 2400,
+    timeLimit: 60,
+    minItems: 3,
+    maxItems: 4,
     scoreMultiplier: 1,
     comboBonusEvery: 4,
     chipSize: "normal"
   },
   normal: {
     label: "ふつう",
-    menu: ["バーガー", "ポテト", "ピザ", "寿司", "ケーキ", "コーヒー"],
-    showTime: 2100,
-    timeLimit: 55,
-    minItems: 3,
-    maxItems: 4,
+    menu: ["ごはん", "からあげ", "卵焼き", "ブロッコリー", "鮭", "ポテト", "トマト"],
+    showTime: 1700,
+    timeLimit: 50,
+    minItems: 4,
+    maxItems: 5,
     scoreMultiplier: 2,
     comboBonusEvery: 3,
-    chipSize: "normal"
+    chipSize: "small"
   },
   hard: {
     label: "むずかしい",
-    menu: ["バーガー", "サンド", "ホットドッグ", "ポテト", "ピザ", "寿司", "ケーキ", "ドーナツ", "コーヒー"],
-    showTime: 1250,
-    timeLimit: 40,
-    minItems: 4,
+    menu: ["ごはん", "からあげ", "卵焼き", "ブロッコリー", "鮭", "ハンバーグ", "ポテト", "トマト", "エビフライ"],
+    showTime: 900,
+    timeLimit: 35,
+    minItems: 5,
     maxItems: 6,
-    scoreMultiplier: 4,
+    scoreMultiplier: 5,
     comboBonusEvery: 2,
     chipSize: "small"
   }
@@ -189,14 +189,14 @@ function getItemCount(settings) {
 
 function getShowTime(settings) {
   if (game.difficulty === "easy") {
-    return Math.max(2400, settings.showTime - game.combo * 55);
+    return Math.max(1800, settings.showTime - game.combo * 45);
   }
 
   if (game.difficulty === "normal") {
-    return Math.max(1450, settings.showTime - game.combo * 65);
+    return Math.max(1050, settings.showTime - game.combo * 60);
   }
 
-  return Math.max(700, settings.showTime - game.combo * 70);
+  return Math.max(520, settings.showTime - game.combo * 55);
 }
 
 function makeOrder(count) {
@@ -209,7 +209,7 @@ function renderOrder(hidden) {
   game.order.forEach((item) => {
     const chip = document.createElement("div");
     chip.className = hidden ? "order-chip hidden-order" : "order-chip";
-    chip.textContent = hidden ? "?" : iconMap[item];
+    chip.innerHTML = hidden ? "?" : makeFoodImage(item);
     orderItems.appendChild(chip);
   });
 }
@@ -220,10 +220,14 @@ function renderChoiceButtons() {
     const button = document.createElement("button");
     button.type = "button";
     button.dataset.food = food;
-    button.innerHTML = `${iconMap[food]}<span>${food}</span>`;
+    button.innerHTML = `${makeFoodImage(food)}<span>${food}</span>`;
     button.addEventListener("click", () => chooseFood(food));
     choiceGrid.appendChild(button);
   });
+}
+
+function makeFoodImage(food) {
+  return `<img class="food-art" src="${assetMap[food]}" alt="" draggable="false">`;
 }
 
 function chooseFood(food) {
