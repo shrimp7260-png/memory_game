@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="salmon">
+  <g fill="none" stroke="#3F3A36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M35 39h58l10 15-10 35H35L25 74z" fill="#F47A63"/>
+    <path d="M35 39h58l-5 15H30z" fill="#FFB08E"/>
+    <path d="M47 58l-6 24M66 58l-7 24M84 58l-7 24" stroke="#FFD2BE" stroke-width="4"/>
+    <path d="M34 88h58" stroke="#D8564D" stroke-width="4"/>
+  </g>
+</svg>

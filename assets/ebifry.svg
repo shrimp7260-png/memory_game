@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="ebi fry">
+  <g fill="none" stroke="#3F3A36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 27c25 10 42 30 47 64-22-1-43-13-57-36-7-12-1-25 10-28z" fill="#F0B84C"/>
+    <path d="M37 29c-9-8-16-4-19 5 8 1 15 5 19 12M42 26c-1-12 8-16 17-12-4 7-5 15-2 22" fill="#F47A63"/>
+    <path d="M53 41c9 5 16 13 22 23M45 55c9 8 20 14 32 17M60 82c8 4 16 6 25 6" stroke="#FFE18B" stroke-width="4"/>
+  </g>
+</svg>

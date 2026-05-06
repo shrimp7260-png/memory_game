@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="tamagoyaki">
+  <g fill="none" stroke="#3F3A36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="28" y="40" width="72" height="49" rx="13" fill="#FFD95C"/>
+    <path d="M44 40v49M64 40v49M84 40v49" stroke="#F4AA3C" stroke-width="4"/>
+    <path d="M38 54h52M38 75h52" stroke="#FFF3A6" stroke-width="4"/>
+  </g>
+</svg>

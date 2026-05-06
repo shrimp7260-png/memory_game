@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="broccoli">
+  <g fill="none" stroke="#3F3A36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M57 70h15l8 31H48z" fill="#7CC66A"/>
+    <circle cx="43" cy="54" r="18" fill="#4FB35D"/>
+    <circle cx="62" cy="43" r="21" fill="#62C86E"/>
+    <circle cx="84" cy="57" r="18" fill="#4FB35D"/>
+    <circle cx="62" cy="64" r="20" fill="#5CBC64"/>
+    <path d="M57 73l-9 28M70 73l10 28" stroke="#4FA85A" stroke-width="4"/>
+  </g>
+</svg>

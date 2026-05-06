@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="karaage">
+  <g fill="none" stroke="#3F3A36" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M39 42c11-13 34-9 38 8 14 0 23 15 16 27-6 12-22 13-31 5-9 12-29 10-36-3-8-14 0-31 13-37z" fill="#D98235"/>
+    <path d="M50 51c5-5 13-5 18 0M42 72c5 6 14 8 21 4M74 65c5 2 10 0 13-4" stroke="#F5B45F" stroke-width="4"/>
+    <circle cx="53" cy="62" r="3" fill="#F5B45F" stroke="none"/>
+    <circle cx="76" cy="77" r="3" fill="#F5B45F" stroke="none"/>
+  </g>
+</svg>

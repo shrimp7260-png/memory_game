@@ -1,15 +1,15 @@
 "use strict";
 
 const assetMap = {
-  "ごはん": "../bento-game/assets/rice.svg",
-  "からあげ": "../bento-game/assets/karaage.svg",
-  "卵焼き": "../bento-game/assets/tamagoyaki.svg",
-  "ブロッコリー": "../bento-game/assets/broccoli.svg",
-  "鮭": "../bento-game/assets/salmon.svg",
-  "ハンバーグ": "../bento-game/assets/hamburg.svg",
-  "ポテト": "../bento-game/assets/potato.svg",
-  "トマト": "../bento-game/assets/tomato.svg",
-  "エビフライ": "../bento-game/assets/ebifry.svg"
+  "ごはん": "assets/rice.svg",
+  "からあげ": "assets/karaage.svg",
+  "卵焼き": "assets/tamagoyaki.svg",
+  "ブロッコリー": "assets/broccoli.svg",
+  "鮭": "assets/salmon.svg",
+  "ハンバーグ": "assets/hamburg.svg",
+  "ポテト": "assets/potato.svg",
+  "トマト": "assets/tomato.svg",
+  "エビフライ": "assets/ebifry.svg"
 };
 
 const difficultySettings = {
