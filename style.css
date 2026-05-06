@@ -68,6 +68,39 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
 
 .mode-actions { display: grid; gap: 12px; }
 
+.difficulty-panel {
+  display: grid;
+  gap: 8px;
+}
+
+.difficulty-panel > span {
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.difficulty-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.difficulty-button {
+  min-height: 52px;
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 4px 0 rgba(45, 41, 56, 0.15);
+  font-size: 0.94rem;
+  font-weight: 950;
+}
+
+.difficulty-button.is-selected {
+  border-color: var(--main);
+  background: var(--main);
+  color: #fff;
+}
+
 .primary-button,
 .secondary-button {
   min-height: 58px;
@@ -82,8 +115,8 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
 
 .game-screen {
   display: grid;
-  grid-template-rows: auto auto minmax(240px, 1fr) auto;
-  gap: 10px;
+  grid-template-rows: auto auto auto minmax(240px, 1fr) auto;
+  gap: 8px;
   overflow: hidden;
 }
 
@@ -109,6 +142,14 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
   margin: 0;
   color: var(--main-dark);
   font-size: 0.84rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.difficulty-text {
+  margin: -4px 0 0;
+  color: var(--muted);
+  font-size: 0.78rem;
   font-weight: 900;
   text-align: center;
 }
@@ -141,6 +182,17 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
   min-height: 84px;
 }
 
+.order-items.size-large {
+  grid-template-columns: repeat(3, 92px);
+  min-height: 98px;
+}
+
+.order-items.size-small {
+  grid-template-columns: repeat(3, 62px);
+  min-height: 134px;
+  gap: 8px;
+}
+
 .order-chip {
   display: grid;
   place-items: center;
@@ -152,11 +204,39 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
   font-size: 2.8rem;
 }
 
+.order-items.size-large .order-chip {
+  width: 92px;
+  height: 92px;
+  font-size: 3.3rem;
+}
+
+.order-items.size-small .order-chip {
+  width: 62px;
+  height: 62px;
+  font-size: 2.15rem;
+}
+
 .order-chip.hidden-order {
   background: #eee9ff;
   color: var(--main-dark);
   font-size: 2rem;
   font-weight: 950;
+}
+
+.order-items.is-fading .order-chip {
+  animation: order-fade 260ms ease forwards;
+}
+
+@keyframes order-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
 }
 
 .feedback {
@@ -204,6 +284,7 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
 }
 
 .choice-grid button:active,
+.difficulty-button:active,
 .primary-button:active,
 .secondary-button:active {
   transform: translateY(3px);
@@ -226,9 +307,15 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
 
 @media (max-height: 690px) {
   .screen { padding-top: 10px; }
-  .game-screen { grid-template-rows: auto auto minmax(174px, 1fr) auto; gap: 7px; }
+  .start-screen { gap: 12px; }
+  .difficulty-button { min-height: 44px; font-size: 0.82rem; }
+  .game-screen { grid-template-rows: auto auto auto minmax(174px, 1fr) auto; gap: 6px; }
   .memory-card { min-height: 174px; padding: 12px; gap: 8px; }
   .order-items { grid-template-columns: repeat(3, 58px); min-height: 62px; gap: 8px; }
+  .order-items.size-large { grid-template-columns: repeat(3, 68px); min-height: 72px; }
+  .order-items.size-small { grid-template-columns: repeat(3, 52px); min-height: 112px; gap: 6px; }
   .order-chip { width: 58px; height: 58px; font-size: 2.1rem; }
+  .order-items.size-large .order-chip { width: 68px; height: 68px; font-size: 2.45rem; }
+  .order-items.size-small .order-chip { width: 52px; height: 52px; font-size: 1.8rem; }
   .choice-grid button { min-height: 62px; font-size: 1.5rem; }
 }

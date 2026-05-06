@@ -12,6 +12,14 @@
         <div class="logo-mark" aria-hidden="true">🧠</div>
         <p class="kicker">消える注文を覚えよう</p>
         <h1>注文メモリー</h1>
+        <section class="difficulty-panel" aria-label="難易度選択">
+          <span>難易度</span>
+          <div class="difficulty-row">
+            <button class="difficulty-button" type="button" data-difficulty="easy">かんたん</button>
+            <button class="difficulty-button is-selected" type="button" data-difficulty="normal">ふつう</button>
+            <button class="difficulty-button" type="button" data-difficulty="hard">むずかしい</button>
+          </div>
+        </section>
         <div class="mode-actions">
           <button class="primary-button" type="button" data-start-mode="time">タイムアタック</button>
           <button class="secondary-button" type="button" data-start-mode="endless">エンドレス</button>
@@ -26,6 +34,7 @@
           <div><span id="timerLabel">時間</span><strong id="timeText">60</strong></div>
         </header>
         <p id="modeText" class="mode-text">タイムアタック 60秒</p>
+        <p id="difficultyText" class="difficulty-text">難易度: ふつう</p>
 
         <section class="memory-card">
           <p id="phaseText" class="phase-text">注文を覚えてください</p>
@@ -33,14 +42,7 @@
           <p id="feedbackText" class="feedback" aria-live="assertive"></p>
         </section>
 
-        <section class="choice-grid" aria-label="注文を選ぶ">
-          <button type="button" data-food="バーガー">🍔<span>バーガー</span></button>
-          <button type="button" data-food="ポテト">🍟<span>ポテト</span></button>
-          <button type="button" data-food="ピザ">🍕<span>ピザ</span></button>
-          <button type="button" data-food="寿司">🍣<span>寿司</span></button>
-          <button type="button" data-food="ケーキ">🍰<span>ケーキ</span></button>
-          <button type="button" data-food="コーヒー">☕<span>コーヒー</span></button>
-        </section>
+        <section id="choiceGrid" class="choice-grid" aria-label="注文を選ぶ"></section>
       </section>
 
       <section id="resultScreen" class="screen result-screen is-hidden">
