@@ -63,6 +63,7 @@ const modeText = document.querySelector("#modeText");
 const difficultyText = document.querySelector("#difficultyText");
 const phaseText = document.querySelector("#phaseText");
 const orderItems = document.querySelector("#orderItems");
+const selectedItems = document.querySelector("#selectedItems");
 const feedbackText = document.querySelector("#feedbackText");
 const choiceGrid = document.querySelector("#choiceGrid");
 const resultModeText = document.querySelector("#resultModeText");
@@ -170,6 +171,7 @@ function startRound() {
   orderItems.classList.add(`size-${settings.chipSize}`);
   phaseText.textContent = "注文を覚えてください";
   renderOrder(false);
+  renderSelectedItems();
 
   const showTime = getShowTime(settings);
   game.fadeTimerId = window.setTimeout(() => {
@@ -182,6 +184,7 @@ function startRound() {
     phaseText.textContent = "同じ注文を選んでください";
     orderItems.classList.remove("is-fading");
     renderOrder(true);
+    renderSelectedItems();
   }, showTime);
 }
 
@@ -217,6 +220,23 @@ function renderOrder(hidden) {
   });
 }
 
+function renderSelectedItems() {
+  selectedItems.innerHTML = "";
+  const targetCount = game.order.length;
+
+  for (let index = 0; index < targetCount; index += 1) {
+    const chip = document.createElement("div");
+    chip.className = "selected-chip";
+
+    if (game.selected[index]) {
+      chip.classList.add("is-filled");
+      chip.innerHTML = makeFoodImage(game.selected[index]);
+    }
+
+    selectedItems.appendChild(chip);
+  }
+}
+
 function renderChoiceButtons() {
   choiceGrid.innerHTML = "";
   getSettings().menu.forEach((food) => {
@@ -239,6 +259,7 @@ function chooseFood(food) {
   }
 
   game.selected.push(food);
+  renderSelectedItems();
 
   if (game.selected.length === game.order.length) {
     judgeOrder();

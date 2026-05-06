@@ -246,6 +246,61 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
   animation: order-fade 260ms ease forwards;
 }
 
+.selected-panel {
+  display: grid;
+  gap: 6px;
+  width: 100%;
+  max-width: 260px;
+}
+
+.selected-panel > span {
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.selected-items {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.selected-chip {
+  display: grid;
+  place-items: center;
+  min-height: 34px;
+  border: 2px dashed rgba(111, 99, 182, 0.28);
+  border-radius: 8px;
+  background: rgba(249, 247, 255, 0.76);
+}
+
+.selected-chip.is-filled {
+  border-style: solid;
+  background: #fffefa;
+  box-shadow: 0 3px 0 rgba(45, 41, 56, 0.1);
+  animation: selected-pop 160ms ease-out;
+}
+
+.selected-chip .food-art {
+  width: 30px;
+  height: 30px;
+}
+
+@keyframes selected-pop {
+  0% {
+    transform: scale(0.78);
+  }
+
+  75% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes order-fade {
   0% {
     opacity: 1;
@@ -349,4 +404,7 @@ h1 { margin-bottom: 8px; font-size: clamp(2.35rem, 11vw, 3.45rem); line-height: 
   .choice-grid button { min-height: 56px; font-size: 1.36rem; }
   .choice-grid .food-art { width: 34px; height: 34px; }
   .choice-grid span { font-size: 0.58rem; }
+  .selected-panel { max-width: 232px; gap: 4px; }
+  .selected-chip { min-height: 28px; }
+  .selected-chip .food-art { width: 24px; height: 24px; }
 }
